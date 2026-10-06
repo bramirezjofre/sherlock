@@ -30,6 +30,7 @@ dist/**
 # Output files, except requirements.txt
 *.txt
 !requirements.txt
+/output/
 
 # Comma-Separated Values (CSV) Reports
 *.csv
