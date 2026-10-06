@@ -1,0 +1,13 @@
+services:
+  sherlock:
+    build:
+      context: .
+      args:
+        VERSION_TAG: "0.16.2"
+    image: sherlock:local
+    # Keep files in the bind mount owned by the invoking host user.
+    user: "${UID:-1000}:${GID:-1000}"
+    # Override this with `docker compose run --rm sherlock <username>`.
+    volumes:
+      - ./output:/output
+    entrypoint: ["sherlock"]

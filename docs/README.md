@@ -43,6 +43,24 @@ Community-maintained packages are available for Debian (>= 13), Ubuntu (>= 22.10
 
 See all alternative installation methods [here](https://sherlockproject.xyz/installation).
 
+### Docker
+
+Use the published image:
+
+```bash
+docker run --rm -it sherlock/sherlock user123
+```
+
+To build and run the checked-out source instead:
+
+```bash
+docker compose build
+docker compose run --rm sherlock user123 --output /output/user123.txt
+```
+
+The Compose setup mounts `./output` so result files remain on the host. Pass any
+Sherlock options after the username as usual.
+
 ## General usage
 
 To search for only one user:
